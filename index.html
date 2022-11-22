@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BattleShip</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script1.js" defer></script>
+    <script src="https://kit.fontawesome.com/09475033fc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="start-div flex">
+        <div class="header start-header">BattleShip</div>
+        <button class="all-btn start-btn">Start Game</button>
+        <div class="lives-container">
+            <i class="fa-solid fa-caret-down fa-2x lives-selector"></i>
+            <div class="lives-text">Select the amount of lives</div>
+            <div class="lives-number-container">50 55 60 65 70</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="main-header header hide">BattleShip</div>
+        <div class="grid-container hide">
+            <div class="number number-0-0"></div>
+            <div class="number number-row-0">0</div>
+            <div class="number number-row-1">1</div>
+            <div class="number number-row-2">2</div>
+            <div class="number number-row-3">3</div>
+            <div class="number number-row-4">4</div>
+            <div class="number number-row-5">5</div>
+            <div class="number number-row-6">6</div>
+            <div class="number number-row-7">7</div>
+            <div class="number number-row-8">8</div>
+            <div class="number number-row-9">9</div>
+            <div class="number number-row"></div>
+            <div class="number number-column-0">0</div>
+            <div class="water water-0-0"></div>
+            <div class="water water-0-1"></div>
+            <div class="water water-0-2"></div>
+            <div class="water water-0-3"></div>
+            <div class="water water-0-4"></div>
+            <div class="water water-0-5"></div>
+            <div class="water water-0-6"></div>
+            <div class="water water-0-7"></div>
+            <div class="water water-0-8"></div>
+            <div class="water water-0-9"></div>
+            <div class="number"></div>
+            <div class="number number-column-1">1</div>
+            <div class="water water-1-0"></div>
+            <div class="water water-1-1"></div>
+            <div class="water water-1-2"></div>
+            <div class="water water-1-3"></div>
+            <div class="water water-1-4"></div>
+            <div class="water water-1-5"></div>
+            <div class="water water-1-6"></div>
+            <div class="water water-1-7"></div>
+            <div class="water water-1-8"></div>
+            <div class="water water-1-9"></div>
+            <div class="number"></div>
+            <div class="number number-column-2">2</div>
+            <div class="water water-2-0"></div>
+            <div class="water water-2-1"></div>
+            <div class="water water-2-2"></div>
+            <div class="water water-2-3"></div>
+            <div class="water water-2-4"></div>
+            <div class="water water-2-5"></div>
+            <div class="water water-2-6"></div>
+            <div class="water water-2-7"></div>
+            <div class="water water-2-8"></div>
+            <div class="water water-2-9"></div>
+            <div class="number"></div>
+            <div class="number number-column-3">3</div>
+            <div class="water water-3-0"></div>
+            <div class="water water-3-1"></div>
+            <div class="water water-3-2"></div>
+            <div class="water water-3-3"></div>
+            <div class="water water-3-4"></div>
+            <div class="water water-3-5"></div>
+            <div class="water water-3-6"></div>
+            <div class="water water-3-7"></div>
+            <div class="water water-3-8"></div>
+            <div class="water water-3-9"></div>
+            <div class="number"></div>
+            <div class="number number-column-4">4</div>
+            <div class="water water-4-0"></div>
+            <div class="water water-4-1"></div>
+            <div class="water water-4-2"></div>
+            <div class="water water-4-3"></div>
+            <div class="water water-4-4"></div>
+            <div class="water water-4-5"></div>
+            <div class="water water-4-6"></div>
+            <div class="water water-4-7"></div>
+            <div class="water water-4-8"></div>
+            <div class="water water-4-9"></div>
+            <div class="number"></div>
+            <div class="number number-column-5">5</div>
+            <div class="water water-5-0"></div>
+            <div class="water water-5-1"></div>
+            <div class="water water-5-2"></div>
+            <div class="water water-5-3"></div>
+            <div class="water water-5-4"></div>
+            <div class="water water-5-5"></div>
+            <div class="water water-5-6"></div>
+            <div class="water water-5-7"></div>
+            <div class="water water-5-8"></div>
+            <div class="water water-5-9"></div>
+            <div class="number"></div>
+            <div class="number number-column-6">6</div>
+            <div class="water water-6-0"></div>
+            <div class="water water-6-1"></div>
+            <div class="water water-6-2"></div>
+            <div class="water water-6-3"></div>
+            <div class="water water-6-4"></div>
+            <div class="water water-6-5"></div>
+            <div class="water water-6-6"></div>
+            <div class="water water-6-7"></div>
+            <div class="water water-6-8"></div>
+            <div class="water water-6-9"></div>
+            <div class="number"></div>
+            <div class="number number-column-7">7</div>
+            <div class="water water-7-0"></div>
+            <div class="water water-7-1"></div>
+            <div class="water water-7-2"></div>
+            <div class="water water-7-3"></div>
+            <div class="water water-7-4"></div>
+            <div class="water water-7-5"></div>
+            <div class="water water-7-6"></div>
+            <div class="water water-7-7"></div>
+            <div class="water water-7-8"></div>
+            <div class="water water-7-9"></div>
+            <div class="number"></div>
+            <div class="number number-column-8">8</div>
+            <div class="water water-8-0"></div>
+            <div class="water water-8-1"></div>
+            <div class="water water-8-2"></div>
+            <div class="water water-8-3"></div>
+            <div class="water water-8-4"></div>
+            <div class="water water-8-5"></div>
+            <div class="water water-8-6"></div>
+            <div class="water water-8-7"></div>
+            <div class="water water-8-8"></div>
+            <div class="water water-8-9"></div>
+            <div class="number"></div>
+            <div class="number number-column-9">9</div>
+            <div class="water water-9-0"></div>
+            <div class="water water-9-1"></div>
+            <div class="water water-9-2"></div>
+            <div class="water water-9-3"></div>
+            <div class="water water-9-4"></div>
+            <div class="water water-9-5"></div>
+            <div class="water water-9-6"></div>
+            <div class="water water-9-7"></div>
+            <div class="water water-9-8"></div>
+            <div class="water water-9-9"></div>
+            <div class="number"></div>
+        </div>
+        <div class="messages-container hide">
+            <div class="bomb-container bomb-container-hover"></div>
+            <div class="counter bomb-counter">0</div>
+            <div>
+                <div class="message">Welcome, you can already make shots!</div>
+                <div class="points shots-fired">Shots Fired: 0</div>
+                <div class="points ships-shot">Targets Shot: 0</div>
+                <div class="points total-points">Points Scored: 0</div>
+                <div class="points lives-left">Lives Left: 60</div>
+            </div>
+            <div class="atomic-container atomic-container-hover"></div>
+            <div class="counter atomic-counter">0</div>
+        </div>
+        <div class="shot-container hide">
+            <input type="checkbox" class="messages-check hide">
+            <input type="text" id="x_coord" name="x_coord" class="x coords" placeholder="Insert X coord">
+            <input type="text" id="y_coord" name="y_coord" class="y coords" placeholder="Insert Y coord">
+            <button class="fire-button">Fire</button>
+        </div>
+        <button class="all-btn restart-btn hide">Restart</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,514 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    background-image: linear-gradient(to bottom, rgb(53, 51, 51), rgb(27, 26, 26));
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.hide {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.start-div {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.start-div-background {
+    background-image: linear-gradient(to bottom, rgb(53, 51, 51), rgb(27, 26, 26));
+    height: 100vh;
+    width: 80vh;
+    position: absolute;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.grid-container {
+    grid-template-columns: repeat(12, 5.6vh);
+    grid-template-rows: repeat(11, 5.6vh);
+    position: relative;
+}
+
+.water {
+    background-image: url("img/back.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 5.65vh;
+    height: 5.75vh;
+    border: 0.1vh solid rgb(0, 0, 0, 0.7);
+    position: relative;
+    margin: 0;
+}
+
+.number {
+    width: 5.6vh;
+    height: 5.6vh;
+    font-size: 5.6vh;
+    right: 0;
+    margin: 0;
+    padding-left: 4px;
+    bottom: 3px;
+    text-align: center;
+    text-shadow: 0.15vh 0.15vh 0.15vh rgb(62, 53, 53);
+}
+
+.ship-hit {
+    background-image: url("img/navio_de_guerra.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 5;
+}
+
+.submarine-hit {
+    background-image: url("img/submarino.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 5;
+}
+
+.carrier-hit {
+    background-image: url("img/porta_avioes.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 5;
+}
+
+.bomb-hit {
+    background-image: url("img/bomb.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 5;
+}
+
+.atomic-hit {
+    background-image: url("img/atomic.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 5;
+}
+
+.target-hit {
+    transition: 0.1s ease-in;
+}
+
+.target-hit::after {
+    content: "";
+    position: absolute;
+    left: 46%;
+    width: 0.5vh;
+    height: 100%;
+    background-color: rgb(255, 0, 0);
+    transform: rotate(45deg);
+    transform-origin: center;
+    border-radius: 1vh;
+    transition: 0.1s ease-in;
+}
+
+.target-hit::before {
+    content: "";
+    position: absolute;
+    left: 46%;
+    width: 0.5vh;
+    height: 100%;
+    background-color: rgb(255, 0, 0);
+    transform: rotate(-45deg);
+    transform-origin: center;
+    border-radius: 1vh;
+}
+
+.water-hit {
+    background-image: url("img/agua.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 5;
+    transition: 0.1s ease-in;
+}
+
+.water-hit::after {
+    content: "";
+    position: absolute;
+    left: 46%;
+    width: 0.5vh;
+    height: 100%;
+    background-color: rgb(12, 12, 117);
+    transform: rotate(45deg);
+    transform-origin: center;
+    border-radius: 1vh;
+}
+
+.water-hit::before {
+    content: "";
+    position: absolute;
+    left: 46%;
+    width: 0.5vh;
+    height: 100%;
+    background-color: rgb(12, 12, 117);
+    transform: rotate(-45deg);
+    transform-origin: center;
+    border-radius: 1vh;
+}
+
+.grid-container::after {
+    content: "";
+    position: absolute;
+    width: 57.1vh;
+    height: 57.1vh;
+    background-color: rgb(43, 43, 196);
+    left: 7.6%;
+    top: 8.4%;
+    z-index: -1;
+    border: 0.8vh solid black;
+}
+
+.header {
+    font-size: 6vh;
+    text-align: center;
+    color:rgb(83, 132, 255);
+    text-shadow: 0.3vh 0.3vh 0.4vh rgb(43, 43, 196);
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.start-header {
+    font-size: 15vh;
+    margin: 4vh;
+    z-index: 5;
+    text-shadow: 0.4vh 0.4vh 0.6vh rgb(43, 43, 196);
+}
+
+.all-btn {
+    background-color: rgb(43, 43, 196);
+    border-radius: 10vh;
+    font-size: 6vh;
+    padding: 2vh 3vh;
+    font-family: 'Roboto Condensed', sans-serif;
+    cursor: pointer;
+    transition: 0.1s ease-out;
+}
+
+.all-btn:hover {
+    background-color: rgb(64, 64, 214);
+}
+
+.all-btn:active {
+    background-color: rgb(51, 51, 195);
+}
+
+.start-btn {
+    margin: 10vh;
+    z-index: 5;
+}
+
+.restart-btn {
+    margin-left: 22vh;
+}
+
+.shot-container {
+    background-color: rgb(92, 143, 15);
+    border: 0.7vh solid rgb(12, 87, 12);
+    border-radius: 20vh;
+    margin-left: 13vh;
+    width: 42vh;
+    height: 14vh;
+    position: absolute;
+}
+
+.fire-button {
+    position: absolute;
+    background-color: red;
+    border: 0.7vh solid darkred;
+    width: 12vh;
+    height: 12vh;
+    border-radius: 50%;
+    top: 2.2%;
+    right: 2.3%;
+    cursor: pointer;
+    font-size: 3.6vh;
+    color: rgb(89, 9, 9);
+    text-shadow: 0.1vh 0.1vh 0.1vh rgb(71, 5, 5);
+    transition: 0.1s ease-out;
+}
+
+.fire-button:hover {
+    background-color: rgb(255, 44, 44);
+    border: 0.7vh solid rgb(133, 21, 21)
+}
+
+.fire-button:active {
+    background-color: rgb(159, 27, 27);
+}
+
+.coords {
+    position: absolute;
+    background-color: rgb(77, 121, 10);
+    border: 0.43vh solid rgb(12, 87, 12);
+    border-radius: 8vh;
+    margin: 2vh;
+    width: 25vh;
+    height: 3.7vh;
+    text-align: center;
+    transition: 0.2s ease-in-out;
+    font-size: 2.8vh;
+    font-weight: bold;
+}
+
+.coords::placeholder {
+    color: black;
+    text-align: center;
+    font-size: 2.45vh;
+}
+
+.y {
+    bottom: 0vh;
+}
+
+.coords:focus {
+    outline: none;
+    background-color: rgb(83, 129, 14);
+    transform: scale(1.08, 1.08);
+    
+}
+
+.coords:focus::placeholder {
+    color: transparent
+}
+
+.message {
+    margin: 0vh;
+    font-size: 2.8vh;
+    text-align: center;
+    color:rgb(140, 172, 255)
+}
+
+.points {
+    margin: 0vh;
+    font-size: 1.9vh;
+    text-align: center;
+    color:rgb(140, 172, 255)
+}
+
+.messages-container {
+    margin: 2%;
+    position: relative;
+}
+
+.bomb-container {
+    width: 10%;
+    height: 50%;
+    border-radius: 50%;
+    background-color: black;
+    border: 0.4vh solid yellow;
+    position: absolute;
+    left: 25%;
+    bottom: 7%;
+    cursor: pointer;
+    background-image: url("img/bomb.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.2s ease-in-out;
+    
+}
+
+.bomb-container-hover:hover {
+    transform: scale(1.2,1.2);
+}
+
+.atomic-container {
+    width: 10%;
+    height: 50%;
+    border-radius: 50%;
+    background-color: rgb(248, 248, 78);
+    border: 0.4vh solid red;
+    position: absolute;
+    right: 25%;
+    bottom: 7%;
+    cursor: pointer;
+    background-image: url("img/atomic.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.2s ease-in-out;
+}
+
+.atomic-container-hover:hover {
+    transform: scale(1.2,1.2);
+}
+
+.active-bomb-container {
+    width: 12%;
+    height: 65%;
+    box-shadow: 0 0 10px yellow;
+    left: 24.1%;
+    bottom: 0%;
+    position: absolute;
+}
+
+.active-atomic-container {
+    width: 12%;
+    height: 65%;
+    box-shadow: 0 0 13px red;
+    right: 24%;
+    bottom: -2%;
+    position: absolute;
+}
+
+.counter {
+    position: absolute;
+    font-size: 4vh;
+    text-shadow: 0.1vh 0.1vh 0.7vh rgb(88, 88, 88);
+}
+
+.bomb-counter {
+    color: yellow;
+    left: 20%;
+    bottom: 12%;
+}
+
+.atomic-counter {
+    color: red;
+    left: 77%;
+    bottom: 12%;
+}
+
+.messages-check {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 2.5vh;
+    width: 2.5vh;
+    background-color: rgb(29, 29, 29);
+    border: 0.25vh solid rgb(45, 45, 218);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 18vh;
+    top: -2.3vh;
+    z-index: 3;
+}
+
+input[type="checkbox"]:after {
+    content: "+";
+    font-size: 4.3vh;
+    color: rgb(5, 108, 177);
+    display: none;
+}
+
+input[type="checkbox"]:before {
+    content: "-";
+    margin-bottom: 1vh;
+    font-size: 6vh;
+    color: rgb(5, 108, 177);
+    display: block;
+}
+
+input[type="checkbox"]:checked:after {
+    display: block;
+}
+
+input[type="checkbox"]:checked:before {
+    display: none;
+}
+
+.out-of {
+    transition: 0.1s ease-in;
+    cursor: no-drop;
+}
+
+.out-of::after {
+    content: "";
+    position: absolute;
+    left: 46%;
+    width: 0.5vh;
+    height: 100%;
+    background-color: rgb(255, 0, 0);
+    transform: rotate(45deg);
+    transform-origin: center;
+    border-radius: 1vh;
+    transition: 0.1s ease-in;
+}
+
+.out-of::before {
+    content: "";
+    position: absolute;
+    left: 46%;
+    width: 0.5vh;
+    height: 100%;
+    background-color: rgb(255, 0, 0);
+    transform: rotate(-45deg);
+    transform-origin: center;
+    border-radius: 1vh;
+}
+
+.lives-container {
+    background-color: rgba(22, 22, 22, 0.249);
+    border: 0.5vh solid black;
+    border-radius: 10vh;
+    width: 60vh;
+    height: 9vh;
+    margin: 5vh;
+    color: rgb(0, 0, 139);
+    position: relative;
+    box-shadow: 0 0 3vh blue, inset 0 0 4vh black;
+    cursor: grab;
+}
+
+.lives-number-container {
+    color: rgb(49, 49, 224);
+    font-size: 5vh;
+    position: absolute;
+    bottom: 1vh;
+    left: 14.5vh;
+    z-index: -1;
+}
+
+.lives-selector {
+    position: absolute;
+    font-size: 5vh;
+    bottom: 72%;
+    left: 47.9%;
+}
+
+.lives-text {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 4vh;
+    color:rgb(23, 23, 222);
+    position: absolute;
+    left: 16%;
+    top: -80%;
+}
+
+.cursor-grabbing {
+    cursor: grabbing
+}
